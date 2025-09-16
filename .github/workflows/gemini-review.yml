@@ -12,7 +12,13 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+
       - name: Gemini AI Code Reviewer
         uses: truongnh1992/gemini-ai-code-reviewer@v6.5.0
         with:
-          google_api_key: ${{ secrets.GOOGLE_API_KEY }}
+          # مطلوبان بواسطة الأكشن:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          # اختياري:
+          # GEMINI_MODEL: "gemini-1.5-pro"  # أو اتركه على الافتراضي
+          # INPUT_EXCLUDE: "dist/**,node_modules/**"  # لو عايز تستثني مسارات
