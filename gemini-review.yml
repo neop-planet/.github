@@ -15,4 +15,5 @@ jobs:
       - name: Gemini AI Code Reviewer
         uses: truongnh1992/gemini-ai-code-reviewer@v6.5.0
         with:
-          google_api_key: ${{ secrets.GOOGLE_API_
+          google_api_key: ${{ secrets.GOOGLE_API_KEY }}
+
