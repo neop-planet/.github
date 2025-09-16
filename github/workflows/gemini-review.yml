@@ -1,7 +1,8 @@
 name: Gemini AI Code Reviewer (Org)
 
 on:
-  workflow_call:   # مهم جدًا مع Required Workflows
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   review:
