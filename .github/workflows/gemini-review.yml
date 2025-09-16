@@ -2,7 +2,7 @@ name: Gemini AI Code Reviewer (Org)
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   review:
@@ -16,9 +16,7 @@ jobs:
       - name: Gemini AI Code Reviewer
         uses: truongnh1992/gemini-ai-code-reviewer@v6.5.0
         with:
-          # مطلوبان بواسطة الأكشن:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          # اختياري:
-          # GEMINI_MODEL: "gemini-1.5-pro"  # أو اتركه على الافتراضي
-          # INPUT_EXCLUDE: "dist/**,node_modules/**"  # لو عايز تستثني مسارات
+          # GEMINI_MODEL: gemini-1.5-pro      # اختياري
+          # INPUT_EXCLUDE: "*.md,*.txt,*.yml" # اختياري (خلي بالك: اسم البارامتر INPUT_EXCLUDE)
