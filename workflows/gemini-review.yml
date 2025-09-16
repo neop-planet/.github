@@ -1,8 +1,7 @@
 name: Gemini AI Code Reviewer (Org)
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_call:   # مهم جدًا مع Required Workflows
 
 jobs:
   review:
@@ -16,5 +15,3 @@ jobs:
         uses: truongnh1992/gemini-ai-code-reviewer@v6.5.0
         with:
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
-
-
